@@ -9,10 +9,6 @@
   --bordergray: #353567;
 }
 
-/* .box {
-  border: 1px solid red;
-} */
-
 html, body {
   margin: 0;
   height: 100%;
@@ -110,6 +106,11 @@ form {
   background-color: var(--bordergray);
   color: var(--gray);
   font-size: 23px;
+}
+
+.disable{
+   cursor: not-allowed;
+   pointer-events: none;
 }
 
 input {
