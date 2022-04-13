@@ -8,9 +8,13 @@
   <title>IdeaBox</title>
 </head>
 <body>
-  <section class="side-bar bochecx">
+  <section class="side-bar box">
     <div class="box">
-    <h2> sidebar </h2>
+    <h2 class="ideabox-text">IdeaBox</h2>
+    </div>
+    <div class="filter box">
+      <h2 class="filter-text">Filter Starred Ideas</h2>
+      <button class="show-Btn">Show Starred Ideas</button>
     </div>
   </section>
   <section class="idea-section box">
@@ -21,6 +25,12 @@
         <label for="body">Body</label><br>
         <input type="paragraph" id="body" name="body" value=""><br>
         <input type="submit" id="save-button" value="Save"><br>
+        <div class="search">
+          <div class="search-img">
+            <img src="./assets/search.svg" id="searchImg">
+          </div>
+          <input type=search id="searchBar" value="search"><br>
+        </div>
       </form>
     </section>
     <section class="idea-box">
