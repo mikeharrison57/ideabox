@@ -215,3 +215,7 @@ p {
 img {
   height: 30px;
 }
+
+.hidden {
+  display: none;
+}
