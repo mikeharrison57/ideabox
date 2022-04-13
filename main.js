@@ -14,9 +14,19 @@ ideaForm.addEventListener("change", enableSaveButton)
 
 //Functions
 
+function disableSaveButton() {
+  saveButton.disable = true;
+  saveButton.classList.remove('save');
+  saveButton.classList.add('save-cursor');
+}
+
 function enableSaveButton() {
-  if (ideaTitle.value && ideaBody.value) {
-    saveButton.classList.remove("disable");
+  if(ideaTitle.value && ideaBody.value) {
+    saveButton.disable = false;
+    saveButton.classList.add('save');
+    saveButton.classList.remove('save-cursor');
+  } else {
+    disableSaveButton();
   }
 }
 
@@ -49,7 +59,7 @@ function appendIdeaToBox(idea) {
   </div>
   </article>
   `
-ideaBox.innerHTML += newIdeaMiniBox // unshift only works when storing. this is putting the HTML at the end so the box is loading at the end.
+  ideaBox.innerHTML += newIdeaMiniBox // unshift only works when storing. this is putting the HTML at the end so the box is loading at the end.
 }
 
 function clearInput() {
