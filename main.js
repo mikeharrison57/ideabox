@@ -4,11 +4,11 @@ var ideaBody = document.querySelector("#body");
 var saveButton = document.querySelector("#save-button");
 var ideaBox = document.querySelector(".idea-box");
 var ideaForm = document.querySelector(".idea-form"); //listens to the enire form
-var starButton = document.querySelector(".star");
+var starButton = document.querySelector(".save-star");
 var activeStarButton = document.querySelector(".active-star");
 
 // Idea Array
-var ideas = [];
+var ideas = [[]];
 
 //Event listeners
 saveButton.addEventListener("click", saveIdea);
