@@ -7,6 +7,7 @@ var ideaForm = document.querySelector(".idea-form"); //listens to the enire form
 var starButton = document.querySelector(".star");
 var activeStarButton = document.querySelector(".active-star");
 
+// Idea Array
 var ideas = [];
 
 //Event listeners
@@ -16,7 +17,6 @@ starButton.addEventListener("click", changeStar);
 activeStarButton.addEventListener("click", changeStarBack);
 
 //Functions
-
 function disableSaveButton() {
   saveButton.disable = true;
   saveButton.classList.remove("save");
