@@ -11,10 +11,14 @@ var activeStarButton = document.querySelector(".active-star");
 var ideas = [];
 
 //Event listeners
-saveButton.addEventListener("click", saveIdea);
-ideaForm.addEventListener("change", enableSaveButton);
+
+saveButton.addEventListener("click", saveIdea)
+ideaForm.addEventListener("change", enableSaveButton)
+ideaBox.addEventListener("click", deleteMiniIdea)
+
 starButton.addEventListener("click", changeStar);
 activeStarButton.addEventListener("click", changeStarBack);
+
 
 //Functions
 function disableSaveButton() {
@@ -49,8 +53,8 @@ function appendIdeaToBox(idea) {
   var newIdeaMiniBox = `
   <article class="mini-idea" id="${idea.id}">
   <div class="mini-header">
-  <img src="./assets/star.svg">
-  <img src="./assets/delete.svg">
+  <img class="save-star" src="./assets/star.svg">
+  <img class="delete-x" src="./assets/delete.svg">
   </div>
   <div class="mini-body">
   <h3> ${idea.title} </h3>
@@ -68,6 +72,16 @@ function appendIdeaToBox(idea) {
 function clearInput() {
   ideaTitle.value = "";
   ideaBody.value = "";
+}
+
+
+function deleteMiniIdea() {
+  if(event.target.className === "delete-x"){
+    var miniIdea = event.target.closest(".mini-idea");
+    var index = ideas.findIndex(idea => idea.id === miniIdea.id)
+    ideas.splice(index, 1);
+    miniIdea.remove()
+  }
 }
 
 function changeStar() {
