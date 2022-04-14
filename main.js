@@ -11,11 +11,9 @@ var activeStarButton = document.querySelector(".active-star");
 var ideas = [];
 
 //Event listeners
-
-saveButton.addEventListener("click", saveIdea)
-ideaForm.addEventListener("change", enableSaveButton)
-ideaBox.addEventListener("click", deleteMiniIdea)
-
+saveButton.addEventListener("click", saveIdea);
+ideaForm.addEventListener("change", enableSaveButton);
+ideaBox.addEventListener("click", deleteMiniIdea);
 starButton.addEventListener("click", changeStar);
 activeStarButton.addEventListener("click", changeStarBack);
 
