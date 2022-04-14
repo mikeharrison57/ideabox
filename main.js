@@ -54,6 +54,7 @@ function appendIdeaToBox(idea) {
   <article class="mini-idea" id="${idea.id}">
   <div class="mini-header">
   <img class="save-star" src="./assets/star.svg">
+  <img class="active-star hidden" src="./assets/star-active.svg">
   <img class="delete-x" src="./assets/delete.svg">
   </div>
   <div class="mini-body">
