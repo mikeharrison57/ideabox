@@ -4,7 +4,10 @@ var ideaBody = document.querySelector("#body");
 var saveButton = document.querySelector("#save-button");
 var ideaBox = document.querySelector(".idea-box");
 var ideaForm = document.querySelector(".idea-form"); //listens to the enire form
+var starButton = document.querySelector(".star");
+var activeStarButton = document.querySelector(".active-star");
 
+// Idea Array
 var ideas = [];
 
 //Event listeners
@@ -13,19 +16,22 @@ saveButton.addEventListener("click", saveIdea)
 ideaForm.addEventListener("change", enableSaveButton)
 ideaBox.addEventListener("click", deleteMiniIdea)
 
-//Functions
+starButton.addEventListener("click", changeStar);
+activeStarButton.addEventListener("click", changeStarBack);
 
+
+//Functions
 function disableSaveButton() {
   saveButton.disable = true;
-  saveButton.classList.remove('save');
-  saveButton.classList.add('save-cursor');
+  saveButton.classList.remove("save");
+  saveButton.classList.add("save-cursor");
 }
 
 function enableSaveButton() {
   if(ideaTitle.value && ideaBody.value) {
     saveButton.disable = false;
-    saveButton.classList.add('save');
-    saveButton.classList.remove('save-cursor');
+    saveButton.classList.add("save");
+    saveButton.classList.remove("save-cursor");
   } else {
     disableSaveButton();
   }
@@ -68,6 +74,7 @@ function clearInput() {
   ideaBody.value = "";
 }
 
+
 function deleteMiniIdea() {
   if(event.target.className === "delete-x"){
     var miniIdea = event.target.closest(".mini-idea");
@@ -75,4 +82,14 @@ function deleteMiniIdea() {
     ideas.splice(index, 1);
     miniIdea.remove()
   }
+}
+
+function changeStar() {
+  starButton.classList.add("hidden");
+  activeStarButton.classList.remove("hidden");
+}
+
+function changeStarBack() {
+  activeStarButton.classList.add("hidden");
+  starButton.classList.remove("hidden");
 }
