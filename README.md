@@ -20,7 +20,7 @@
 
 ### Other Work From Our Contributors
 
-- [Trish Fox-Collis](https://github.com/mikeharrison57/ideabox)
+- [Trish Fox-Collis](https://github.com/tfoxcollis)
 - [Neil Linton](https://github.com/LINTONBNEIL)
 - [Michael Harrison](https://github.com/mikeharrison57)
 
