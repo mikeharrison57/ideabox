@@ -92,6 +92,15 @@ body {
   overflow-y: auto;
 }
 
+.favorite-idea-box {
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  min-height: 300px;
+  background-color: var(--gray);
+  overflow-y: auto;
+}
+
 form {
   width: 40%;
   display: flex;
