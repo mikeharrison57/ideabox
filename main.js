@@ -13,10 +13,10 @@ var ideas = [];
 //Event listeners
 saveButton.addEventListener("click", saveIdea);
 ideaForm.addEventListener("change", enableSaveButton);
-ideaBox.addEventListener("click", deleteMiniIdea);
+ideaBox.addEventListener("click", whatWasClicked);
 starButton.addEventListener("click", changeStar);
 activeStarButton.addEventListener("click", changeStarBack);
-
+//when star is clicked
 
 //Functions
 function disableSaveButton() {
@@ -42,6 +42,7 @@ function saveIdea() {
     ideas.unshift(idea);
     appendIdeaToBox(idea);
     clearInput();
+    console.log(ideas)
   }else {
   return alert("Please fill out all fields.")
   }
@@ -82,6 +83,31 @@ function deleteMiniIdea() {
     miniIdea.remove()
   }
 }
+
+
+// find article closest to the click
+// take unique ID number from article
+// for loop array with ID # to locate instance
+//call updateIdea on targeted instance
+function whatWasClicked() {
+  if(event.target.className === "delete-x"){
+    deleteMiniIdea();
+  }else if(event.target.className === "save-star" || event.target.className === "active-star"){
+    addStarTrue();
+  }
+}
+function addStarTrue() {
+  var miniIdeaArticle = event.target.closest(".mini-idea");
+  for(var i = 0; i < ideas.length; i++){
+    if(ideas[i].id === miniIdeaArticle.id){
+      ideas[i].updateIdea()
+    }
+  }
+  miniIdeaArticle.querySelector('.save-star').classList.toggle("hidden");
+  miniIdeaArticle.querySelector('.active-star').classList.toggle("hidden");
+}
+starButton.addEventListener("click", changeStar);
+activeStarButton.addEventListener("click", changeStarBack);
 
 function changeStar() {
   starButton.classList.add("hidden");
