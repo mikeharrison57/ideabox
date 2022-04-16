@@ -8,7 +8,8 @@ var starButton = document.querySelector(".save-star");
 var activeStarButton = document.querySelector(".active-star");
 
 var showStarredButton = document.querySelector(".show-Btn");
-var favoriteIdeaPage = document.querySelector(".favorite-idea-box")
+var favoriteIdeaPage = document.querySelector(".favorite-idea-box");
+// var miniIdeaInstances = document.querySelectorAll(".mini-idea");
 
 // Idea Array
 var ideas = [];
@@ -17,12 +18,8 @@ var ideas = [];
 saveButton.addEventListener("click", saveIdea);
 ideaForm.addEventListener("change", enableSaveButton);
 ideaBox.addEventListener("click", whatWasClicked);
-// starButton.addEventListener("click", changeStar);
-// activeStarButton.addEventListener("click", changeStarBack);
 
-showStarredButton.addEventListener("click", showFavoriteIdeas)
-
-//when star is clicked
+showStarredButton.addEventListener("click", showFavoriteIdeas);
 
 //Functions
 function disableSaveButton() {
@@ -90,7 +87,6 @@ function deleteMiniIdea() {
   }
 }
 
-
 // find article closest to the click
 // take unique ID number from article
 // for loop array with ID # to locate instance
@@ -110,43 +106,32 @@ function addStarTrue() {
       ideas[i].updateIdea()
     }
   }
+  miniIdeaArticle.classList.toggle('starred')
   miniIdeaArticle.querySelector('.save-star').classList.toggle("hidden");
   miniIdeaArticle.querySelector('.active-star').classList.toggle("hidden");
 }
 
 function changeStarredButton() {
-  if(showStarredButton.innerText) {
-    showStarredButton.innerText = "Show All Ideas"
-  } else {
-    changeAllButton();
-  }
-}
-
-//trying to toggle between innerText on button
-// not sure how yet?
-
-function changeStarredButton() {
-  if(showStarredButton.innerText) {
-    showStarredButton.innerText = "Show All Ideas"
+  if (showStarredButton.innerText.includes('Starred')) {
+    showStarredButton.innerText = 'Show All Ideas'
+  } else if (showStarredButton.innerText.includes('All')) {
+    showStarredButton.innerText = 'Show Starred Ideas'
   }
 }
 
 function showFavoriteIdeas() {
-  ideaBox.classList.toggle("hidden");
-  favoriteIdeaPage.classList.toggle("hidden");
-  changeStarredButton();
-  // showStarredIdeas();
+  var miniIdeaInstances = document.querySelectorAll(".mini-idea");
+  for(var i = 0; i < miniIdeaInstances.length; i++) {
+    if(miniIdeaInstances[i].className === "mini-idea starred") {
+      miniIdeaInstances[i].style.display = ""
+    } else {
+      miniIdeaInstances[i].style.display = "none"
+    }
+  }
+  changeStarredButton()
 }
 
-
-// need show starred ideas button to show a new
-// function showStarredIdeas() {
-//   for(var i = 0; i < ideas.array; i++) {
-//     if(ideas[i].star === true) {
-//       favoriteIdeaPage.innerHTML += ideas[i]
-//     }
-//   }
-// }
-
+//trying to toggle between innerText on button
+// not sure how yet?
 // only want favorited cards on favorite-idea-box section
 // how to make it just show those ideas there?
