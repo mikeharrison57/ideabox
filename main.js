@@ -7,6 +7,10 @@ var ideaForm = document.querySelector(".idea-form"); //listens to the enire form
 var starButton = document.querySelector(".save-star");
 var activeStarButton = document.querySelector(".active-star");
 
+var showStarredButton = document.querySelector(".show-Btn");
+var favoriteIdeaPage = document.querySelector(".favorite-idea-box");
+// var miniIdeaInstances = document.querySelectorAll(".mini-idea");
+
 // Idea Array
 var ideas = [];
 
@@ -14,9 +18,8 @@ var ideas = [];
 saveButton.addEventListener("click", saveIdea);
 ideaForm.addEventListener("change", enableSaveButton);
 ideaBox.addEventListener("click", whatWasClicked);
-starButton.addEventListener("click", changeStar);
-activeStarButton.addEventListener("click", changeStarBack);
-//when star is clicked
+
+showStarredButton.addEventListener("click", changeStarredButton);
 
 //Functions
 function disableSaveButton() {
@@ -84,7 +87,6 @@ function deleteMiniIdea() {
   }
 }
 
-
 // find article closest to the click
 // take unique ID number from article
 // for loop array with ID # to locate instance
@@ -96,6 +98,7 @@ function whatWasClicked() {
     addStarTrue();
   }
 }
+
 function addStarTrue() {
   var miniIdeaArticle = event.target.closest(".mini-idea");
   for(var i = 0; i < ideas.length; i++){
@@ -103,18 +106,40 @@ function addStarTrue() {
       ideas[i].updateIdea()
     }
   }
+  miniIdeaArticle.classList.toggle('starred')
   miniIdeaArticle.querySelector('.save-star').classList.toggle("hidden");
   miniIdeaArticle.querySelector('.active-star').classList.toggle("hidden");
 }
-starButton.addEventListener("click", changeStar);
-activeStarButton.addEventListener("click", changeStarBack);
 
-function changeStar() {
-  starButton.classList.add("hidden");
-  activeStarButton.classList.remove("hidden");
+function changeStarredButton() {
+  if (showStarredButton.innerText.includes('Starred')) {
+    showStarredButton.innerText = 'Show All Ideas'
+    showFavoriteIdeas()
+  } else if (showStarredButton.innerText.includes('All')) {
+    showAllIdeas()
+    showStarredButton.innerText = 'Show Starred Ideas'
+  }
 }
 
-function changeStarBack() {
-  activeStarButton.classList.add("hidden");
-  starButton.classList.remove("hidden");
+function showFavoriteIdeas() {
+  var miniIdeaInstances = document.querySelectorAll(".mini-idea");
+  for(var i = 0; i < miniIdeaInstances.length; i++) {
+    if(miniIdeaInstances[i].className === "mini-idea starred") {
+      miniIdeaInstances[i].style.display = ""
+    } else {
+      miniIdeaInstances[i].style.display = "none"
+    }
+  }
 }
+
+function showAllIdeas() {
+  var miniIdeaInstances = document.querySelectorAll(".mini-idea");
+  for(var i = 0; i < miniIdeaInstances.length; i++) {
+    miniIdeaInstances[i].style.display = "block"
+  }
+}
+
+//trying to toggle between innerText on button
+// not sure how yet?
+// only want favorited cards on favorite-idea-box section
+// how to make it just show those ideas there?

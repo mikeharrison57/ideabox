@@ -6,7 +6,7 @@ class Idea {
     this.star = false;
   }
   updateIdea() {
-    if(this.star) {
+    if(this.star === false) {
       this.star = true;
     } else {
       this.star = false;
