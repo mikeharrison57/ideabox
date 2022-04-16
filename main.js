@@ -19,7 +19,7 @@ saveButton.addEventListener("click", saveIdea);
 ideaForm.addEventListener("change", enableSaveButton);
 ideaBox.addEventListener("click", whatWasClicked);
 
-showStarredButton.addEventListener("click", showFavoriteIdeas);
+showStarredButton.addEventListener("click", changeStarredButton);
 
 //Functions
 function disableSaveButton() {
@@ -114,7 +114,9 @@ function addStarTrue() {
 function changeStarredButton() {
   if (showStarredButton.innerText.includes('Starred')) {
     showStarredButton.innerText = 'Show All Ideas'
+    showFavoriteIdeas()
   } else if (showStarredButton.innerText.includes('All')) {
+    showAllIdeas()
     showStarredButton.innerText = 'Show Starred Ideas'
   }
 }
@@ -128,7 +130,13 @@ function showFavoriteIdeas() {
       miniIdeaInstances[i].style.display = "none"
     }
   }
-  changeStarredButton()
+}
+
+function showAllIdeas() {
+  var miniIdeaInstances = document.querySelectorAll(".mini-idea");
+  for(var i = 0; i < miniIdeaInstances.length; i++) {
+    miniIdeaInstances[i].style.display = "block"
+  }
 }
 
 //trying to toggle between innerText on button
