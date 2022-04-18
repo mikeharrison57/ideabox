@@ -12,7 +12,7 @@
 
 #### Our Application Video
 
-![Demo](.IdeaBox.gif)
+![Demo](./IdeaBox.gif)
 
 ## Deployed Page
 
