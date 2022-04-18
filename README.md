@@ -10,15 +10,9 @@
 
 ![ideabox-comp](https://user-images.githubusercontent.com/95496577/163694687-3cb13ddd-88e9-4105-a623-d4565bec4cc4.jpeg)
 
-#### Our Application Images
+#### Our Application Video
 
-<img width="1420" alt="Screen Shot 2022-04-16 at 5 50 27 PM" src="https://user-images.githubusercontent.com/95496577/163694733-4691311f-ae31-4101-895a-aa95265f4dd5.png">
-
-<img width="1425" alt="Screen Shot 2022-04-16 at 5 51 05 PM" src="https://user-images.githubusercontent.com/95496577/163694734-7dc91332-a1a6-4818-92ae-56414fd046ad.png">
-
-<img width="642" alt="Screen Shot 2022-04-16 at 5 52 35 PM" src="https://user-images.githubusercontent.com/95496577/163694735-ba4f8873-ba1f-4049-9b92-4dc1a08443c6.png">
-
-<img width="1439" alt="Screen Shot 2022-04-16 at 5 53 35 PM" src="https://user-images.githubusercontent.com/95496577/163694736-73b5aa03-c01c-48dc-83f6-aed3510d3f47.png">
+![Demo](./IdeaBox.gif)
 
 ## Deployed Page
 
