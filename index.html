@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <title>IdeaBox</title>
 </head>
 <body>
   <section class="side-bar box">
-    <div class="box">
     <h2 class="ideabox-text">IdeaBox</h2>
-    </div>
     <div class="filter box">
       <h2 class="filter-text">Filter Starred Ideas</h2>
       <button class="show-Btn">Show Starred Ideas</button>
@@ -24,7 +21,7 @@
         <input type="text" id="title" name="title" value=""><br>
         <label for="body">Body</label><br>
         <input type="paragraph" id="body" name="body" value=""><br>
-        <input type="submit" class="save" id="save-button" value="Save"><br>
+        <input type="submit" class="save" id="saveButton" value="Save"><br>
         <div class="search">
           <div class="search-img">
             <img src="./assets/search.svg" id="searchImg">
@@ -34,23 +31,6 @@
       </form>
     </section>
     <section class="idea-box">
-      <article class="mini-idea">
-        <div class="mini-header">
-          <img class="save-star" src="./assets/star.svg">
-          <img class="active-star hidden" src="./assets/star-active.svg">
-          <img class="delete-x" src="./assets/delete.svg">
-        </div>
-        <div class="mini-body">
-          <h3> Idea Title </h3>
-          <p> Idea body. Don't ever play yourself.
-            Every chance I get, I water the plants,
-            Lion! Cloth talk. </p>
-        </div>
-        <div class="mini-footer">
-            <img src="./assets/comment.svg">
-            <h4>Comment</h4>
-        </div>
-      </article>
     </section>
   </section>
   <script type="text/javascript" src="idea.js"></script>

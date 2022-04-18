@@ -1,15 +1,13 @@
 // Query Selectors
 var ideaTitle = document.querySelector("#title");
 var ideaBody = document.querySelector("#body");
-var saveButton = document.querySelector("#save-button");
+var saveButton = document.querySelector("#saveButton");
 var ideaBox = document.querySelector(".idea-box");
-var ideaForm = document.querySelector(".idea-form"); //listens to the enire form
+var ideaForm = document.querySelector(".idea-form");
 var starButton = document.querySelector(".save-star");
 var activeStarButton = document.querySelector(".active-star");
-
 var showStarredButton = document.querySelector(".show-Btn");
 var favoriteIdeaPage = document.querySelector(".favorite-idea-box");
-// var miniIdeaInstances = document.querySelectorAll(".mini-idea");
 
 // Idea Array
 var ideas = [];
@@ -18,7 +16,6 @@ var ideas = [];
 saveButton.addEventListener("click", saveIdea);
 ideaForm.addEventListener("change", enableSaveButton);
 ideaBox.addEventListener("click", whatWasClicked);
-
 showStarredButton.addEventListener("click", changeStarredButton);
 
 //Functions
@@ -26,7 +23,7 @@ function disableSaveButton() {
   saveButton.disable = true;
   saveButton.classList.remove("save");
   saveButton.classList.add("save-cursor");
-}
+};
 
 function enableSaveButton() {
   if(ideaTitle.value && ideaBody.value) {
@@ -36,7 +33,7 @@ function enableSaveButton() {
   } else {
     disableSaveButton();
   }
-}
+};
 
 function saveIdea() {
   event.preventDefault();
@@ -49,7 +46,7 @@ function saveIdea() {
   }else {
   return alert("Please fill out all fields.")
   }
-}
+};
 
 function appendIdeaToBox(idea) {
   var newIdeaMiniBox = `
@@ -69,14 +66,13 @@ function appendIdeaToBox(idea) {
   </div>
   </article>
   `
-  ideaBox.innerHTML += newIdeaMiniBox // unshift only works when storing. this is putting the HTML at the end so the box is loading at the end.
-}
+  ideaBox.innerHTML += newIdeaMiniBox
+};
 
 function clearInput() {
   ideaTitle.value = "";
   ideaBody.value = "";
-}
-
+};
 
 function deleteMiniIdea() {
   if(event.target.className === "delete-x"){
@@ -85,41 +81,37 @@ function deleteMiniIdea() {
     ideas.splice(index, 1);
     miniIdea.remove()
   }
-}
+};
 
-// find article closest to the click
-// take unique ID number from article
-// for loop array with ID # to locate instance
-//call updateIdea on targeted instance
 function whatWasClicked() {
   if(event.target.className === "delete-x"){
     deleteMiniIdea();
   }else if(event.target.className === "save-star" || event.target.className === "active-star"){
     addStarTrue();
   }
-}
+};
 
 function addStarTrue() {
   var miniIdeaArticle = event.target.closest(".mini-idea");
   for(var i = 0; i < ideas.length; i++){
     if(ideas[i].id === miniIdeaArticle.id){
-      ideas[i].updateIdea()
+      ideas[i].updateIdea();
     }
   }
   miniIdeaArticle.classList.toggle('starred')
   miniIdeaArticle.querySelector('.save-star').classList.toggle("hidden");
   miniIdeaArticle.querySelector('.active-star').classList.toggle("hidden");
-}
+};
 
 function changeStarredButton() {
   if (showStarredButton.innerText.includes('Starred')) {
     showStarredButton.innerText = 'Show All Ideas'
-    showFavoriteIdeas()
+    showFavoriteIdeas();
   } else if (showStarredButton.innerText.includes('All')) {
-    showAllIdeas()
+    showAllIdeas();
     showStarredButton.innerText = 'Show Starred Ideas'
   }
-}
+};
 
 function showFavoriteIdeas() {
   var miniIdeaInstances = document.querySelectorAll(".mini-idea");
@@ -130,16 +122,11 @@ function showFavoriteIdeas() {
       miniIdeaInstances[i].style.display = "none"
     }
   }
-}
+};
 
 function showAllIdeas() {
   var miniIdeaInstances = document.querySelectorAll(".mini-idea");
   for(var i = 0; i < miniIdeaInstances.length; i++) {
     miniIdeaInstances[i].style.display = "block"
   }
-}
-
-//trying to toggle between innerText on button
-// not sure how yet?
-// only want favorited cards on favorite-idea-box section
-// how to make it just show those ideas there?
+};
