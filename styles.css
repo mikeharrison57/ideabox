@@ -7,15 +7,16 @@
   --offwhite: #E9E9F3;
   --buttonblue: #5356A4;
   --bordergray: #353567;
+  --white: #FFFFFF
 }
 
+ /* BODY */
 html, body {
   margin: 0;
   height: 100%;
 }
 
 body {
-  border: 1px solid red;
   font-family: var(--font-family);
   width: 100%;
   display: flex;
@@ -23,8 +24,8 @@ body {
   justify-content: space-evenly;
 }
 
+ /* SIDE BAR: FILTER/NAV */
  .side-bar {
-  border: 3px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -67,9 +68,8 @@ body {
   color: var(--offwhite);
   background: var(--buttonblue);
 }
-
+ /* MAIN: INPUT/BUTTON */
 .idea-section{
-  border: 3px solid green;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -101,7 +101,7 @@ form {
   margin-bottom: auto;
 }
 
-#save-button {
+#saveButton {
   width: 100%;
   height: 40px;
   color: var(--gray);
@@ -109,7 +109,7 @@ form {
 }
 
 .save {
-  background-color: #89CFF0;
+  background-color: var(--filtergray);
 }
 
 .save:hover {
@@ -128,7 +128,6 @@ input {
   width: 99%;
   margin: 0;
   padding: 0;
-  border: 2px solid #5356A4
 }
 
 label {
@@ -147,13 +146,11 @@ p {
 #title {
   padding: -10px;
   height: 40px;
-  /* margin-bottom: 20px; */
 }
 
 #body {
   padding: -10px;
   height: 70px;
-  /* margin-bottom: 20px; */
 }
 
 .search {
@@ -176,6 +173,7 @@ p {
   width: 90%;
 }
 
+ /* MINI PICS */
 .mini-idea {
   display: flex;
   flex-direction: column;
@@ -200,13 +198,13 @@ p {
   padding: 10px;
   height: 220px;
   color: var(--darkBlue);
-  background-color: #FFFFFF;
+  background-color: var(--white);
 }
 
 .mini-footer {
   height: 40px;
-  background-color: #5356A4;
-  color: #E9E9F3;
+  background-color: var(--buttonblue);
+  color: var(--offwhite);
   display: flex;
   align-items: center;
 }
